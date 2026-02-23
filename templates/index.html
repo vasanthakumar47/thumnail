@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thumbnail Pro Max | Vasanth Kumar</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <style>
+        :root {
+            --bg-dark: #0f172a;
+            --card-glass: rgba(30, 41, 59, 0.7);
+            --accent-gold: #fbbf24;
+            --text-main: #f8fafc;
+            --input-bg: rgba(15, 23, 42, 0.6);
+        }
+
+        body {
+            background: radial-gradient(circle at top right, #1e293b, var(--bg-dark));
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .main-card {
+            background: var(--card-glass);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            max-width: 800px;
+            width: 100%;
+        }
+
+        .header-section h1 {
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 5px;
+        }
+
+        .header-section p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        .section-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+            margin-top: 25px;
+        }
+
+        .form-control {
+            background: var(--input-bg);
+            border: 1px solid #334155;
+            color: white;
+            border-radius: 12px;
+            padding: 12px 15px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            background: rgba(15, 23, 42, 0.8);
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.1);
+            color: white;
+        }
+
+        .input-group-text {
+            background: var(--input-bg);
+            border: 1px solid #334155;
+            color: #64748b;
+            border-radius: 12px 0 0 12px;
+        }
+
+        .btn-generate {
+            background: var(--accent-gold);
+            color: #000;
+            border: none;
+            border-radius: 14px;
+            padding: 16px;
+            font-weight: 700;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            margin-top: 30px;
+        }
+
+        .btn-generate:hover {
+            background: #f59e0b;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px -5px rgba(251, 191, 36, 0.4);
+        }
+
+        .footer-info {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            color: #64748b;
+        }
+
+        /* Tooltip style icons */
+        .bi { font-size: 1.1rem; }
+    </style>
+</head>
+<body>
+
+<div class="main-card">
+    <div class="header-section text-center mb-4">
+        <h1><i class="bi bi-layers-half text-warning"></i> Thumbnail <span class="text-warning">Pro Max</span></h1>
+        <p>Professional Thumbnail Automation for Educators & Content Creators</p>
+    </div>
+
+    <form action="/generate" method="POST">
+        
+        <div class="section-label">
+            <i class="bi bi-shield-check"></i> Branding & Batch Info
+        </div>
+        <div class="row g-3">
+            <div class="col-md-8">
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-building"></i></span>
+                    <input type="text" name="brand" class="form-control" value="VEL INSTITUTE" required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-calendar3"></i></span>
+                    <input type="text" name="year" class="form-control" value="FEB 2026" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-label">
+            <i class="bi bi-chat-left-text"></i> Primary Content
+        </div>
+        <div class="mb-3">
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-type-h1"></i></span>
+                <input type="text" name="main1" class="form-control" value="Ramsar Sites" required>
+            </div>
+        </div>
+        <div class="mb-3">
+            <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-type-h2"></i></span>
+                <input type="text" name="main2" class="form-control" value="Current Affairs" required>
+            </div>
+        </div>
+
+        <div class="row g-3">
+            <div class="col-md-6">
+                <div class="section-label"><i class="bi bi-info-circle"></i> Subtitle</div>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-text-paragraph"></i></span>
+                    <input type="text" name="sub1" class="form-control" value="Full Coverage">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="section-label"><i class="bi bi-play-btn"></i> Part Info</div>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-hash"></i></span>
+                    <input type="text" name="sub2" class="form-control" value="PART-1">
+                </div>
+            </div>
+        </div>
+
+        <div class="section-label">
+            <i class="bi bi-link-45deg"></i> Digital Presence
+        </div>
+        <div class="input-group mb-4">
+            <span class="input-group-text"><i class="bi bi-globe"></i></span>
+            <input type="text" name="web" class="form-control" value="www.vasanth.com">
+        </div>
+
+        <button type="submit" class="btn btn-generate w-100">
+            <i class="bi bi-file-earmark-arrow-down-fill"></i> 
+            GENERATE & DOWNLOAD THUMBNAIL
+        </button>
+    </form>
+
+    <div class="footer-info">
+        <div><i class="bi bi-clock"></i> <span id="time-display"></span></div>
+        <div>Vasanth Kumar Tooling v2.0</div>
+    </div>
+</div>
+
+<script>
+    // Live Clock Update
+    function updateClock() {
+        const now = new Date();
+        document.getElementById('time-display').innerText = now.toLocaleString('en-IN', {
+            hour: '2-digit',
+            minute: '2-digit',
+            second: '2-digit',
+            day: '2-digit',
+            month: 'short',
+            year: 'numeric'
+        });
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+</script>
+
+</body>
+</html>
